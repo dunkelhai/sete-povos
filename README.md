@@ -55,17 +55,17 @@ inimigos. Todos os números estão em `src/config/balance.ts`.
 
 ## Controles
 
-| Ação                                                             | Mouse                                                    | Teclado                                              |
-| ---------------------------------------------------------------- | -------------------------------------------------------- | ---------------------------------------------------- |
-| Mover o cursor                                                   | mover o mouse                                            | Setas / WASD                                         |
-| Selecionar / mover / atacar / confirmar                          | clique esquerdo                                          | Z / Espaço (Enter também)                            |
-| Alternar modo habilidade                                         | botão "Habilidade"                                       | X / Shift                                            |
-| Cancelar (sai da habilidade → desfaz o movimento → desseleciona) | clique direito                                           | Backspace (ou X quando não há habilidade disponível) |
-| Esperar (encerra a ação da unidade)                              | botão "Esperar" ou clicar na própria unidade selecionada | Z / Espaço sobre a própria unidade                   |
-| Próxima unidade                                                  | —                                                        | Q / Tab                                              |
-| Encerrar turno                                                   | botão "Encerrar turno"                                   | E                                                    |
-| Pausa (com opção "Reduzir tremor/flash")                         | —                                                        | Esc                                                  |
-| Reiniciar                                                        | —                                                        | R                                                    |
+| Ação                                                             | Mouse                  | Teclado                                              |
+| ---------------------------------------------------------------- | ---------------------- | ---------------------------------------------------- |
+| Mover o cursor                                                   | mover o mouse          | Setas / WASD                                         |
+| Selecionar / mover / atacar / confirmar                          | clique esquerdo        | Z / Espaço (Enter também)                            |
+| Alternar modo habilidade                                         | botão "Habilidade"     | X / Shift                                            |
+| Cancelar (sai da habilidade → desfaz o movimento → desseleciona) | clique direito         | Backspace (ou X quando não há habilidade disponível) |
+| Esperar (encerra a ação da unidade)                              | botão "Esperar" no HUD | C                                                    |
+| Próxima unidade                                                  | —                      | Q / Tab                                              |
+| Encerrar turno                                                   | botão "Encerrar turno" | E                                                    |
+| Pausa (com opção "Reduzir tremor/flash")                         | —                      | Esc                                                  |
+| Reiniciar                                                        | —                      | R                                                    |
 
 **Sobre o X/Shift:** com a unidade selecionada, X entra no modo habilidade (hexes amarelos); X de novo
 volta ao modo normal. Se a habilidade estiver em recarga ou sem alvos, X funciona como **cancelar**
@@ -141,6 +141,9 @@ src/
 - **Sem sorte:** dano fixo, sem acerto/erro, para que a previsão seja exata e o jogo seja um puzzle.
 - **Movimento:** Dijkstra com custo por terreno; dá para atravessar aliados, mas não inimigos;
   não é possível terminar num hex ocupado.
+- **Esperar é sempre explícito:** só pelo botão "Esperar" ou pela tecla C. Clicar (ou dar Z/Espaço) na
+  unidade já selecionada não faz nada além de pulsar a seleção, porque o jogo seleciona sozinho a
+  primeira unidade a cada turno e o clique de "selecionar" não pode gastar a ação.
 - **Mover → agir:** depois de agir a unidade não move mais. O movimento pode ser desfeito
   (clique direito/Backspace) enquanto a unidade não agiu. Selecionar outra unidade depois de mover
   conta como "esperar" para a anterior.
