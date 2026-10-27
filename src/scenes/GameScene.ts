@@ -1099,8 +1099,8 @@ export class GameScene extends Phaser.Scene {
       tip.bg
         .lineStyle(2, f.heal > 0 ? PAL.vida : f.kill ? PAL.hlHabilidade : PAL.hlAtaque, 1)
         .strokeRoundedRect(-w / 2, -h / 2, w, h, 10);
-      const x = Phaser.Math.Clamp(v.x + 62, 60 + w / 2, 1220 - w / 2);
-      tip.box.setPosition(x, Math.max(110, v.y - 70)).setVisible(true);
+      const x = Phaser.Math.Clamp(v.x, 60 + w / 2, 1220 - w / 2);
+      tip.box.setPosition(x, Math.max(92 + h / 2, v.y - 84 - h / 2)).setVisible(true);
     });
   }
 
@@ -1148,7 +1148,7 @@ export class GameScene extends Phaser.Scene {
           `Terreno: ${tile?.terrain ?? ''}`,
         ].join('\n'),
       );
-      this.infoText.setColor(hov.team === 'player' ? PALS.turquesa : '#f08a70');
+      this.infoText.setColor(hov.team === 'player' ? PALS.turquesa : PALS.inimigoClaro);
       this.info.setVisible(true);
     } else {
       const tile = b.tile(this.cursor);
@@ -1175,7 +1175,7 @@ export class GameScene extends Phaser.Scene {
       this.abilityDesc,
       this.abilityStatus,
     ].forEach((o) => o.setVisible(showUnit));
-    this.hintText.setVisible(!showUnit);
+    this.hintText.setVisible(!showUnit && this.phase !== 'ended');
     if (u && showUnit) {
       this.portrait.setTexture(`unit-${u.kind}`);
       this.nameText.setText(u.name);
@@ -1268,7 +1268,7 @@ export class GameScene extends Phaser.Scene {
     );
     const menu = new Button(this, 640 + 136, 560, 240, 56, 'Menu', () => this.toMenu(), 26);
     const hint = this.add
-      .text(640, 630, 'Espaço ou R: jogar de novo · M: menu', textStyle(16))
+      .text(640, 616, 'Espaço ou R: jogar de novo · M: menu', textStyle(16))
       .setOrigin(0.5)
       .setAlpha(0.7);
     layer.add([title, ...stats, again, menu, hint]);

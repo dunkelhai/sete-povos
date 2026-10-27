@@ -31,6 +31,8 @@ export const PAL = {
   metal: 0xcfd6d6,
   cabelo: 0x3a2a22,
   folha: 0x7fc46a,
+  esgotado: 0x8a8a8a,
+  botaoOff: 0x6d6a63,
 } as const;
 
 export const PALS = {
@@ -45,6 +47,9 @@ export const PALS = {
   hlHabilidade: '#f2c14e',
   vida: '#7ed957',
   cinza: '#a9a49a',
+  inimigoClaro: '#f08a70',
+  botaoOffTexto: '#3b3833',
+  preto: '#000000',
 } as const;
 
 export const FONT_TITLE = '"Alegreya SC", serif';

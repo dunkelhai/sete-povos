@@ -56,7 +56,7 @@ export class UnitView extends Phaser.GameObjects.Container {
 
   setDone(done: boolean): void {
     this.dimmed = done;
-    if (done) this.sprite.setTint(0x8a8a8a);
+    if (done) this.sprite.setTint(PAL.esgotado);
     else this.sprite.clearTint();
   }
 
@@ -65,7 +65,7 @@ export class UnitView extends Phaser.GameObjects.Container {
     this.scene.time.delayedCall(80, () => {
       if (!this.active) return;
       this.sprite.clearTint();
-      if (this.dimmed) this.sprite.setTint(0x8a8a8a);
+      if (this.dimmed) this.sprite.setTint(PAL.esgotado);
     });
   }
 

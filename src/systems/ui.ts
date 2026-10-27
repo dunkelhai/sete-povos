@@ -87,7 +87,7 @@ export class Button extends Phaser.GameObjects.Container {
   private draw(hover: boolean): void {
     const g = this.bg;
     g.clear();
-    const fill = !this.enabled ? 0x6d6a63 : hover ? PAL.turquesa : PAL.areiaTerra;
+    const fill = !this.enabled ? PAL.botaoOff : hover ? PAL.turquesa : PAL.areiaTerra;
     g.fillStyle(PAL.tinta, 1).fillRoundedRect(-this.bw / 2, -this.bh / 2 + 4, this.bw, this.bh, 12);
     g.fillStyle(fill, 1).fillRoundedRect(-this.bw / 2, -this.bh / 2, this.bw, this.bh, 12);
     g.lineStyle(3, PAL.tinta, 1).strokeRoundedRect(
@@ -97,7 +97,7 @@ export class Button extends Phaser.GameObjects.Container {
       this.bh,
       12,
     );
-    this.label.setColor(this.enabled ? PALS.tinta : '#3b3833');
+    this.label.setColor(this.enabled ? PALS.tinta : PALS.botaoOffTexto);
   }
 }
 

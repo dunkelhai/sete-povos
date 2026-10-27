@@ -47,7 +47,7 @@ export class PauseScene extends Phaser.Scene {
     new Button(this, 640, 484, 420, 56, 'Reiniciar (R)', restart, 28);
     new Button(this, 640, 556, 420, 56, 'Menu (M)', menu, 28);
     this.add
-      .text(640, 640, 'A partida fica congelada enquanto a pausa está aberta.', textStyle(18))
+      .text(640, 616, 'A partida fica congelada enquanto a pausa está aberta.', textStyle(18))
       .setOrigin(0.5)
       .setAlpha(0.7);
 
