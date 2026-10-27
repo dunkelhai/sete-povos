@@ -1,0 +1,51 @@
+/** Paleta do jogo (STYLE_GUIDE, seção "sete-povos"). Nunca use hex solto nas cenas. */
+export const PAL = {
+  fundo: 0x1f2a2e,
+  campo: 0x9bb35a,
+  campoLado: 0x6e8240,
+  campoLadoEsc: 0x5a6b34,
+  mata: 0x3f7a4a,
+  mataLado: 0x2b5534,
+  mataLadoEsc: 0x22452a,
+  muro: 0xb86a4a,
+  muroLado: 0x7f4530,
+  muroLadoEsc: 0x6a3826,
+  areiaTerra: 0xd9b98a,
+  turquesa: 0x2ec4b6,
+  turquesaEscuro: 0x16867c,
+  inimigo: 0xc4452e,
+  inimigoEscuro: 0x8a2c1c,
+  tinta: 0x22201f,
+  branco: 0xffffff,
+  hlMove: 0x2ec4b6,
+  hlAtaque: 0xe8553a,
+  hlHabilidade: 0xf2c14e,
+  arvoreClara: 0x58a062,
+  tronco: 0x6b4a32,
+  pele: 0xe2b07e,
+  peleSombra: 0xc08a5c,
+  telhado: 0x8f3626,
+  vida: 0x7ed957,
+  vidaPerdida: 0x3a2e2a,
+  painel: 0x000000,
+  metal: 0xcfd6d6,
+  cabelo: 0x3a2a22,
+  folha: 0x7fc46a,
+} as const;
+
+export const PALS = {
+  fundo: '#1f2a2e',
+  areiaTerra: '#d9b98a',
+  turquesa: '#2ec4b6',
+  turquesaEscuro: '#16867c',
+  inimigo: '#c4452e',
+  tinta: '#22201f',
+  branco: '#ffffff',
+  hlAtaque: '#e8553a',
+  hlHabilidade: '#f2c14e',
+  vida: '#7ed957',
+  cinza: '#a9a49a',
+} as const;
+
+export const FONT_TITLE = '"Alegreya SC", serif';
+export const FONT_UI = '"Baloo 2", sans-serif';
