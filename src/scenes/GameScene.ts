@@ -334,7 +334,7 @@ export class GameScene extends Phaser.Scene {
       652,
       240,
       36,
-      'Esperar (Z)',
+      'Esperar (C)',
       () => this.waitSelected(),
       20,
     );
@@ -424,6 +424,8 @@ export class GameScene extends Phaser.Scene {
         return this.secondary();
       case 'Backspace':
         return this.cancel();
+      case 'KeyC':
+        return this.waitSelected();
       case 'KeyQ':
       case 'Tab':
         return this.cycleUnit();
@@ -572,14 +574,12 @@ export class GameScene extends Phaser.Scene {
           void this.doMove(u, h);
           return;
         }
-        if (at === u) {
-          this.waitSelected();
-          return;
-        }
       }
     }
     if (at && at.team === 'player' && !at.acted) {
+      // clicar na unidade já selecionada não gasta a ação: só pulsa a seleção
       if (at !== u) this.select(at);
+      else pop(this, this.portrait);
       return;
     }
     if (at && at.team === 'enemy') {

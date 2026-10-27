@@ -57,7 +57,7 @@ export class TitleScene extends Phaser.Scene {
     const controls = [
       'Mouse: clique para selecionar, mover e atacar · botão direito cancela',
       'Setas/WASD: cursor · Z/Espaço: confirmar · X/Shift: habilidade/cancelar',
-      'Q: próxima unidade · E: encerrar turno · Esc: pausa · R: reiniciar',
+      'C: esperar · Q: próxima unidade · E: encerrar turno · Esc: pausa · R: reiniciar',
       `Objetivo: elimine os 4 invasores em até ${RULES.maxTurns} turnos`,
     ];
     controls.forEach((c, i) =>
